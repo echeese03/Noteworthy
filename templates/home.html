@@ -51,23 +51,15 @@
 		
 		
 		<div class="container features">
-		  <div class="row">
+			<div class="row">
+		  	{% for file in fileList %}
 			<div class="col-lg-4 col-md-4 col-sm-12">
-			  <h3 class="feature-title">Chemistry Notes</h3>
-			
+			  <h3 class="feature-title">Chemistry Notes</h3>	
 			  <img src="static/sci.png" class="img-fluid">
 			  <p>Hydrogen, Helium, Lithium, and <a href="conversions.html">Beryllium...</a></p>
 			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12">
-			  <h3 class="feature-title">Biology Notes</h3>
-			  <img src="static/bio.png" class="img-fluid">
-			  <p>If the process of mitosis, leaves you in a <a href="conversions.html">daze...</a></p>
-			</div>
-			<div class="col-lg-4 col-md-4 col-sm-12">
-				<h3 class="feature-title">See Previous Notes</h3>
-				<img src="static/math.png" class="img-fluid">
-				<p>See notes from <a href="conversions.html">before!</a></p>
-			</div>
+			{% endfor %}
+			
 		  </div> 
 		</div>
 		
