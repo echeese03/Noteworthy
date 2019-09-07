@@ -23,8 +23,6 @@ body {
 }
 
 .header {
-  background-image: url('C:\Users\dasgu\OneDrive\Documents\HTML\images/pink.jpg');
-  background-size: cover;
   background-position: center;
   position: relative;
 }
