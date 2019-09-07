@@ -16,8 +16,6 @@ from PyDictionary import PyDictionary
 import wikipedia
 import re
 
-
-
 client = language.LanguageServiceClient()
 dictionary = PyDictionary()
 lemmatizer = WordNetLemmatizer()
@@ -35,8 +33,6 @@ def get_tags(text):
     catList = [category.name for category in categories]
     
     return catList
-    
-    
 
 def get_definition(word):
     global dictionary
@@ -145,7 +141,7 @@ def get_sentiment(text):
     return sentiment.score, sentiment.magnitude
     
 
-def graph_text_sentiment(text):
+def graph_sentiment(text):
     s_vals = []
     s_x = []
     pos_s_y = []
@@ -182,9 +178,3 @@ def graph_text_sentiment(text):
     plt.title("Sentiment Analysis")
 
     plt.savefig('plot.png', bbox_inches='tight')
-
-
-
-
-
-
