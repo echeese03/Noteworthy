@@ -47,13 +47,15 @@ def signIn():
 		return redirect(url_for('home'))
 	else:
 		flash('Error: Incorrect username or password!')
+		return redirect(url_for('login'))
 	
 
 @app.route('/home', methods = ['GET', 'POST'])
 def home(username=None, fileList=None):
 	
 	if request.method == "POST":
-		text = request.form['INPUTNAMEHERE']
+		text = request.form['text']
+		print(text)
 		
 		#GET HIGHLIGHT
 		summary = generate_summary(text)

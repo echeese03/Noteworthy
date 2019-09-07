@@ -74,18 +74,16 @@ def addFile(username, text, summary, defDict, urlDict):
 	})
 	
 def getFileList(username):
-	return db.collection(u'users').document(u''+ username).get({u'files'})
+	files =  db.collection(u'users').document(u''+ username).get({u'files'})
+	return files
 	
 
 
 def validateUser(username, password):
-	ref = db.reference('users')
-	snapshot = ref.order_by_child('username').get()
-	index = snapshot.index(username)
-	ref = db.reference('/users/' + str(index))
-	snapshot = ref.order_by_child('password').get()
-	if password == snapshot[0]:
+	if username == db.collection(u'users').document(u''+ username).get({u'username'}) and password == db.collection(u'users').document(u''+ username).get({u'password'}):
 		return True
-	else:
-		return False
+	return False
+
+
+
 
