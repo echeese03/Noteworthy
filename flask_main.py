@@ -4,8 +4,10 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from Firebase.data_handler import checkUser, addUser, validateUser, getFileList
 
-# from Processing.gensim import
-# from Processing.ltk import
+from extractive_summary import *
+
+
+
 
 app = Flask(__name__)
 app.secret_key = b'f233fa457b6c0bc56a9816a7'
@@ -55,6 +57,7 @@ def home(username=None, fileList=None):
 	
 	if request.method == "POST":
 		text = request.form['text']
+		#img = flask.request.files.get('inputFile', '')
 		print(text)
 		
 		#GET HIGHLIGHT
@@ -84,6 +87,10 @@ def home(username=None, fileList=None):
 @app.route('/result/<index>', methods = ['GET'])
 def result(index=None):
 	return render_template('result.html', index=request.args.get(index))
+	
+@app.route('/previous', methods = ['GET'])
+def previous():
+	return render_template('previous.html')
 
 
 

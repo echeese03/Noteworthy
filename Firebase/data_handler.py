@@ -62,11 +62,8 @@ def addUser(username, password):
 
 
 def addFile(username, text, summary, defDict, urlDict):
-	ref = db.reference('/users')
-	snapshot = ref.order_by_child('username').get()
-	index = snapshot.index(username)
-	ref = db.reference('/users/' + str(index) + '/files')
-	ref.push.set({
+	doc_ref = db.collection(u'users').document(u''+ username)
+	doc_ref.set({
 		'finalText' : text,
 		'summary' : summary,
 		'definitions' : defDict,
@@ -74,7 +71,7 @@ def addFile(username, text, summary, defDict, urlDict):
 	})
 	
 def getFileList(username):
-	files =  db.collection(u'users').document(u''+ username).get({u'files'})
+	files =  db.collection(u'users').document(u''+ username).get({u'files'}).to_dict()
 	return files
 	
 
