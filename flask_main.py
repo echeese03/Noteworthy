@@ -2,6 +2,11 @@ from flask import Flask, jsonify
 from flask import render_template, request, redirect, url_for, make_response, session, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 
+from /Firebase/data_handler import checkUser, addUser, validateUser, getFileList
+
+from /Processing import gensim, ltk
+from gensim import 
+
 
 
 @app.route('/', methods=['GET', 'POST'])
@@ -19,7 +24,7 @@ def signUp():
 	username = request.from['INPUTNAMEHERE']
 	password = request.from['INPUTNAMEHERE']
 	
-	if checkUser():
+	if checkUser(username):
 	
 		addUser(username, generate_password_hash(password))
 		
@@ -44,10 +49,53 @@ def signIn():
 	
 
 @app.route('/home', methods = ['GET', 'POST'])
-def home(username=None):
-	return render_template('home.html', username=session['username'])
+def home(username=None, fileList=None):
 	
+	if request.method == "POST":
+		text = request.from['INPUTNAMEHERE']
+		
+		#GET HIGHLIGHT
+		summary = generate_summary(text)
+		
+		#GET KEYWORDS
+		kw = get_kw(text)
+		
+		defDict = {}
+		urlDict = {}
+		
+		for word in kw:
+			definition, url = get_definition(word)
+			
+			defDict[kw] = definition
+			urlList[kw] = url
+		
+		addFile(session['username'], text, summary, defDict, urlDict)
+		
+		return redirect(url_for('result'))
+			
+	else:
+		return render_template('home.html', username=session['username'], fileList = getFileList(session['username']))
+		
+
 	
-@app.route('/result', methods = ['GET', 'POST'])
-def result():
-	return render_template('result.html')
+@app.route('/result/<index>', methods = ['GET'])
+def result(index=None):
+	return render_template('result.html', index=request.args.get(index))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
