@@ -2,12 +2,13 @@ from flask import Flask, jsonify
 from flask import render_template, request, redirect, url_for, make_response, session, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from /Firebase/data_handler import checkUser, addUser, validateUser, getFileList
+from Firebase.data_handler import checkUser, addUser, validateUser, getFileList
 
-from /Processing import gensim, ltk
-from gensim import 
+# from Processing.gensim import
+# from Processing.ltk import
 
-
+app = Flask(__name__)
+app.secret_key = b'f233fa457b6c0bc56a9816a7'
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -21,8 +22,8 @@ def login():
 @app.route('/signUp', methods = ['POST'])
 def signUp():
 	
-	username = request.from['INPUTNAMEHERE']
-	password = request.from['INPUTNAMEHERE']
+	username = request.form['uname']
+	password = request.form['pword']
 	
 	if checkUser(username):
 	
@@ -38,10 +39,10 @@ def signUp():
 @app.route('/signIn', methods = ['POST'])
 def signIn():
 	
-	username = request.from['INPUTNAMEHERE']
-	password = request.from['INPUTNAMEHERE']
+	username = request.form['uname']
+	password = generate_password_hash(request.form['pword'])
 	
-	if validateUser():
+	if validateUser(username, password):
 		session['username'] = username
 		return redirect(url_for('home'))
 	else:
@@ -52,7 +53,7 @@ def signIn():
 def home(username=None, fileList=None):
 	
 	if request.method == "POST":
-		text = request.from['INPUTNAMEHERE']
+		text = request.form['INPUTNAMEHERE']
 		
 		#GET HIGHLIGHT
 		summary = generate_summary(text)

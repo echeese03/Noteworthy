@@ -1,80 +1,65 @@
 import firebase_admin
+import firebase_admin
 from firebase_admin import credentials
-from firebase_admin import db
+from firebase_admin import firestore
 
-cred = credentials.Certificate("noteworthy-bddb5-firebase-adminsdk-x90j4-c1d5d93243.json")
-firebase_admin.initialize_app(cred, {'databaseURL' : 'https://noteworthy-bddb5.firebaseio.com'})
+from werkzeug.security import generate_password_hash, check_password_hash
 
-#EXAMPLE WRITING TO FILE
-# ref = db.reference('/')
-# ref.set({
-# 	'users': [
-# 	
-# 	{'username': 'user1',
-# 	'password': 'pass1',
-# 	'files': [
-# 		{'finalText' : 'finalTextHere',
-# 		'summary' : 'summaryHERE',
-# 		'definitions' : 
-#			{'keyword' : 'def'},
-#		'urls' : 
-#			{'keyword' : 'url'}
-#	
-#		},
-# 		
-# 		{'finalText' : 'finalTextHere',
-# 		'summary' : 'summaryHERE',
-# 		'definitions' : 
-#			{'keyword' : 'def'},
-#		'urls' : 
-#			{'keyword' : 'url'}
-#	
-#		}
-# 		
-# 		]
-# 	},
-# 	
-# 	{'username': 'user1',
-# 	'password': 'pass1',
-# 	'files':
-# 		[
-# 		{'finalText' : 'finalTextHere',
-# 		'summary' : 'summaryHERE',
-# 		'definitions' : 
-#			{'keyword' : 'def'},
-#		'urls' : 
-#			{'keyword' : 'url'}
-#	
-#		},
-# 		
-# 		{'finalText' : 'finalTextHere',
-# 		'summary' : 'summaryHERE',
-# 		'definitions' : 
-#			{'keyword' : 'def'},
-#		'urls' : 
-#			{'keyword' : 'url'}
-#	
-#		}
-# 		]
-# 	}]
-# 
-# })
+
+
+# Use the application default credentials
+# cred = credentials.Certificate('/Users/ezra/Documents/GitHub/Noteworthy/Firebase/noteworthy-bddb5-firebase-adminsdk-x90j4-162762cb2d.json')
+# firebase_admin.initialize_app(cred, {'databaseURL' : 'https://noteworthy-bddb5.firebaseio.com'})
+
+if (not len(firebase_admin._apps)):
+    cred = credentials.Certificate('/Users/ezra/Documents/GitHub/Noteworthy/Firebase/noteworthy-bddb5-firebase-adminsdk-x90j4-162762cb2d.json') 
+    firebase_admin.initialize_app(cred, {'databaseURL' : 'https://noteworthy-bddb5.firebaseio.com'})
+
+db = firestore.client()
+
+#Example write to db
+doc_ref = db.collection(u'users').document(u'username')
+doc_ref.set({
+	u'username': u'user1',
+	u'password': u'pass1',
+	u'files': [
+	{u'definitions': {u'keyword': u'def'},
+	u'urls': {u'keyword': u'url'},
+	u'finalText': u'finalTextHere',
+	u'summary': u'summaryHere'
+	}]
+
+})
+
+
+users_ref = db.collection(u'users')
+docs = users_ref.stream()
+
+# for doc in docs:
+#      print(u'{} => {}'.format(doc.id, doc.to_dict()))
+
+
+
+
+
 
 def checkUser(username):
-	ref = db.reference('/users')
-	snapshot = ref.order_by_child('username').get()
-	if username in snapshot.items():
-		return false
-	else:
-		return true
+	if db.collection(u'users').document(u'' + username).get().exists:
+		return False
+	return True
+
 		
 def addUser(username, password):
-	ref = db.reference('/users')
-	ref.push().set({
-	'username': username,
-	'password': password,
-	'files': []
+
+	doc_ref = db.collection(u'users').document(u''+ username)
+	doc_ref.set({
+		u'username': u'' + username,
+		u'password': u'' + password,
+		u'files': []
 	})
+
+
+
 
 def addFile(username, text, summary, defDict, urlDict):
 	ref = db.reference('/users')
@@ -89,10 +74,18 @@ def addFile(username, text, summary, defDict, urlDict):
 	})
 	
 def getFileList(username):
-	ref = db.reference('/users')
+	return db.collection(u'users').document(u''+ username).get({u'files'})
+	
+
+
+def validateUser(username, password):
+	ref = db.reference('users')
 	snapshot = ref.order_by_child('username').get()
 	index = snapshot.index(username)
 	ref = db.reference('/users/' + str(index))
-	snapshot = ref.order_by_child('files').get()
-	return snapshot
+	snapshot = ref.order_by_child('password').get()
+	if password == snapshot[0]:
+		return True
+	else:
+		return False
 
