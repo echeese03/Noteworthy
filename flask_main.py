@@ -4,7 +4,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 
 from Firebase.data_handler import checkUser, addUser, validateUser, getFileList
 
-from extractive_summary import *
+from extractive_summary import generate_summary
+from google_cloud_nlp import get_keywords
 
 
 
@@ -64,7 +65,7 @@ def home(username=None, fileList=None):
 		summary = generate_summary(text)
 		
 		#GET KEYWORDS
-		kw = get_kw(text)
+		kw = get_keywords(text)
 		
 		defDict = {}
 		urlDict = {}
