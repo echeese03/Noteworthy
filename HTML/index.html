@@ -14,7 +14,7 @@
 		
 		<!--Navigation bar-->
 		<nav class="navbar navbar-expand-md">
-		  <a class="navbar-brand" href="#">Logo</a>
+		  <a class="navbar-brand" href="#">NoteWorthy</a>
 		  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
 			<span class="navbar-toggler-icon"></span>
 		  </button>
@@ -33,41 +33,65 @@
 		</div>
 		</nav>
 
-		<!--Header-->
+		<!--Header
 		<header class="page-header header container-fluid">
 			<div class="overlay"></div>
-			<div class="description"><br><br><br>
-				<h1>Welcome to Noteworthy!</h1>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis. Suspendisse consectetur mi id libero fringilla, in pharetra sem ullamcorper.</p>
-				<form action="/home" method="post" target="_self"><br>
-					<center><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"></center><br>
+				<div class="description">
+				<br><br><br>
+					<h1>Welcome to Noteworthy!</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis. Suspendisse consectetur mi id libero fringilla, in pharetra sem ullamcorper.</p>
+					<form action="/home" method="post" target="_self"><br>
+					<center><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"></center>
+					<br>
 					<button type="submit">Submit<button>
+					</form>
+					
+				</div>
+		</header>-->
+		
+		<div class = "container mt-5">
+			<div class="jumbotron">
+				<h1 class="display-4">Welcome to NoteWorthy!</h1>
+				<p class="lead">A compact and powerful text analysis tool for students</p>
+				<hr class="my-4">
+				<form action="/home" method="post" target="_self"><br>
+					<input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg">
+					<br>
+					<br>
+					<button type="submit" class="btn btn-outline-primary">Submit</button>
 				</form>
+			
+
 			</div>
-		</header>
+		</div>
 		
 		
+		<div class ="container">
+		<h2>Coming Soon...</h2>
+		</div>
 		
 		<div class="container features">
 		  <div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-12">
-			  <h3 class="feature-title">Chemistry Notes</h3>
+			  <h3 class="feature-title">Academic News</h3>
 			
-			  <img src="images/sci.png" class="img-fluid">
-			  <p>Hydrogen, Helium, Lithium, and <a href="conversions.html">Beryllium...</a></p>
+			  <img src="images/sci.png" style = "height:200px;width:280px" class="img-fluid">
+			  <p>Hydrogen, Helium, Lithium, and <a href="https://www.forbes.com/sites/petergreene/2019/08/31/the-sat-tweaked-the-adversity-score-can-they-undo-the-damage-it-caused/#22ac05fd1fcb">Beryllium...</a></p>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-12">
-			  <h3 class="feature-title">Biology Notes</h3>
-			  <img src="images/bio.png" class="img-fluid">
-			  <p>If the process of mitosis, leaves you in a <a href="conversions.html">daze...</a></p>
+			  <h3 class="feature-title">Student discussion</h3>
+			  <img src="images/bio.png" style = "height:200px;width:280px" class="img-fluid">
+			  <p>If the process of mitosis, leaves you in a <a href="https://stackoverflow.com/">daze...</a></p>
 			</div>
 			<div class="col-lg-4 col-md-4 col-sm-12">
-				<h3 class="feature-title">See Previous Notes</h3>
-				<img src="images/math.png" class="img-fluid">
+				<h3 class="feature-title" >See Previous Notes</h3>
+				<img src="images/math.png" class="img-fluid" style = "height:200px;width:280px">
 				<p>See notes from <a href="conversions.html">before!</a></p>
 			</div>
 		  </div> 
 		</div>
+		
+		
 		
 		<!--Scripts-->
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
