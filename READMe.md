@@ -1,2 +1,0 @@
-#NoteWorthy
-Text Summary Generator
