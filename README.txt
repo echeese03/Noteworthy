@@ -1,0 +1,1 @@
+Download word2vec.model and word2vec.model.vectors.npy from https://nlp.stanford.edu/projects/glove/ in this directory
