@@ -1,7 +1,7 @@
 body {
   padding: 0;
   margin: 0;
-  background: #fff4d2;
+  background: #ffffff;
 }
 /*--- navigation bar ---*/
 .navbar {
@@ -26,16 +26,6 @@ body {
   background-position: center;
   position: relative;
 }
-
-/*.overlay {
-  position: absolute;
-  min-height: 80%;
-  min-width: 100%;
-  left: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.6);
-}*/
-
 .description {
   left: 50%;
   position: absolute;
