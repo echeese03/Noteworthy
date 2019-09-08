@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<title>Conversions</title> 
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+		integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="conversions.css">
+	</head>
+  
+	<body>
+		<!--Navigation bar-->
+		<nav class="navbar navbar-expand-md">
+		  <a class="navbar-brand" href="https://www.youtube.com/watch?v=oHg5SJYRHA0">NoteWorthy</a>
+		  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+			<div class="collapse navbar-collapse" id="main-navigation">
+				<ul class="navbar-nav">
+				  <li class="nav-item">
+					<a class="nav-link" href="index.html">Home</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">About</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#">Contact</a>
+				  </li>
+				</ul>
+			</div>
+		</nav>
+		
+		<!--Column Structure-->
+		<div class="container-fluid mt-5">
+			<div class="row mr-5 ml-3 mb-5">
+				<!--<div class="col">
+					<div class="form-group shadow-textarea">
+						<label for="exampleFormControlTextarea6">Original Text</label>
+						<textarea readonly class="form-control z-depth-1">Ale Ble Cle Dle Ele</textarea>
+					</div>
+					<br>
+				</div>
+ 				<div class="col">
+					<div class="form-group shadow-textarea">
+						<label for="exampleFormControlTextarea6">Summary</label>
+						<textarea readonly class="form-control z-depth-1">Lorem ipsum dolor sit amen...</textarea>
+					</div>
+				</div>-->
+				<div class="col">
+					
+					<h2 class = "ml-3">Original Text:</h2>
+					<div class = "card bg-light mt-5 scroll">
+						<div class="card-body">
+							
+							<p class="card-text"></p>
+						</div>
+					</div>
+				</div>
+				
+				<div class = "col-1">
+				
+				</div>
+				
+				<div class = "col">
+					<h2>Analysis:</h2>
+					<div class = "card scroll mr-3 bg-light mt-5">
+						<div class = "card mt-3 mr-3 ml-3">
+							<div class="card-body">
+							<h5 class="card-title">Summary</h5>
+							<p class="card-text">{ fileList[index]['summary'] }</p>
+							</div>
+						
+						</div>
+						
+						<div class = "card mt-5 mb-3 mr-3 ml-3">
+							<div class="card-body">
+							<h5 class="card-title">Keywords</h5>
+							<p class="card-text">{ fileList[index]['definitions'] }</p>
+							</div>
+						
+						</div>
+						
+						<div class = "card mt-5 mb-3 mr-3 ml-3">
+							<div class="card-body">
+							<h5 class="card-title">Other statistics</h5>
+							<img class="card-img-top" src="images/noteworthy_logo.png" alt="Card image cap">
+							</div>
+						
+						</div>
+					</div>
+				</div>
+			</div>
+		
+ 
+		</div>
+		
+		<!--Scripts-->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<script src="conversions.js"></script>
+	</body>
+</html>
