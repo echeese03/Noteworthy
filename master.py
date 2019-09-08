@@ -1,8 +1,8 @@
-from .google_cloud_vision import image_to_text
-from .google_cloud_nlp import get_tags, get_keywords, graph_sentiment
+from google_cloud_vision import image_to_text
+from google_cloud_nlp import get_tags, get_keywords, graph_sentiment
 
-from .extractive_summary import generate_summary
-from .run import abstractive_summary
+from extractive_summary import generate_summary
+from run import abstractive_summary
 
 import readability
 

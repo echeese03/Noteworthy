@@ -8,7 +8,7 @@ Read the README.txt files in this directory and /logs/myexperiment/train and fol
 CLASSPATH=full/path/to/stanford-corenlp-3.7.0.jar
 GOOGLE_APPLICATION_CREDENTIALS=full/path/to/googlecloudapi/jsonkey
 
-Before running "flask run", execute "export FLASK_APP=main.py"
+Before running "flask run", execute "export FLASK_APP=flask_main.py"
 
 ## What it does
 The web app takes in a picture/screenshot of text and auto-generates a summary and highlights important sentences, making skimming a dense article simple. In addition, keywords and their definitions are provided along with some other information (sentiment, classification, and Flesch-Kincaid readability). Finally, a few miscellaneous community tools (random student-related articles and a link to Stack Exchange) are also available.

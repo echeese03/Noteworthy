@@ -3,11 +3,9 @@ from flask import render_template, request, redirect, url_for, make_response, se
 from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.datastructures import FileStorage
 
-from .Firestore.data_handler import checkUser, addUser, validateUser, getFileList, addFile
-
-from .master import master_text, master_image
-from .google_cloud_nlp import get_keywords
-from .scrape import random_news_article
+from master import master_text, master_image
+from google_cloud_nlp import get_keywords
+from scrape import random_news_article
 
 
 app = Flask(__name__)

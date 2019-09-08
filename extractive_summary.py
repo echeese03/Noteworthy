@@ -1,7 +1,7 @@
 from gensim.models.keyedvectors import KeyedVectors
 from nltk.cluster.util import cosine_distance
 from nltk.corpus import stopwords
-from .preprocessing import get_sentences, tokenize_sentence
+from preprocessing import get_sentences, tokenize_sentence
 import numpy as np
 import networkx as nx
 

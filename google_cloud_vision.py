@@ -4,8 +4,8 @@ import os
 from google.cloud import vision
 from google.cloud.vision import types
 
-from .extractive_summary import generate_summary
-from .google_cloud_nlp import graph_sentiment, get_keywords
+from extractive_summary import generate_summary
+from google_cloud_nlp import graph_sentiment, get_keywords
 
 import textwrap
 from nltk import sent_tokenize
