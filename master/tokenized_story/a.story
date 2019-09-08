@@ -1,9 +1,0 @@
--LRB- CNN -RRB- Senate Majority Leader Mitch McConnell said he would defend funding for a new middle school in his home state of Kentucky after it was selected as one of the military projects the Trump administration will delay in order to fund border wall construction .
-
-Secretary of Defense Mark Esper announced on Tuesday the list of projects impacted by the funding move , which would shift a little less than $ 1.8 billion from projects in 23 states and three US territories . The middle school was slated to receive $ 62.6 million in February 2020 .
-`` Senator McConnell recently talked to Secretary Esper regarding the issue and is committed to protecting funding for the Ft. Campbell Middle School project , '' a spokesman for McConnell said in a statement .
-The school is to be located on Fort Campbell , which covers 105,000 acres partly in Tennessee and partly in Kentucky . The base is home to the Army 's fifth largest military population , including members of the 101st Airborne Division , known as the `` Screaming Eagles . ''
-The Kentucky Republican voted to support Trump 's national security declaration in March , which allowed the President to use military funding for border wall projects .
-The spokesman for McConnell blamed the delayed military construction projects -- a funding decision made by Trump to secure his long-sought-after funding for a border wall -- on Democrats .
-`` Regrettably , Democrat opposition to secure our borders has now led to the potential delay of certain Military Construction projects , '' the spokesman added in a statement . `` We would not be in this situation if Democrats were serious about protecting our homeland and worked with us to provide the funding needed to secure our borders during our appropriations process . ''
-In total , 127 domestic and overseas projects are being put on hold to help fund the wall that Trump initially promised would be paid for by Mexico .
