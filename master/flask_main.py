@@ -2,10 +2,10 @@ from flask import Flask, jsonify
 from flask import render_template, request, redirect, url_for, make_response, session, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 
-from firestore.data_handler import checkUser, addUser, validateUser, getFileList
+from .Firestore.data_handler import checkUser, addUser, validateUser, getFileList
 
-from extractive_summary import generate_summary
-from google_cloud_nlp import get_keywords
+from .extractive_summary import generate_summary
+from .google_cloud_nlp import get_keywords
 
 
 

@@ -12,7 +12,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 # firebase_admin.initialize_app(cred, {'databaseURL' : 'https://noteworthy-bddb5.firebaseio.com'})
 
 if (not len(firebase_admin._apps)):
-    cred = credentials.Certificate('/Users/ezra/Documents/GitHub/Noteworthy/Firestore/noteworthy-bddb5-firebase-adminsdk-x90j4-162762cb2d.json') 
+    cred = credentials.Certificate('/Users/ezra/Documents/GitHub/Noteworthy/master/Firestore/noteworthy-bddb5-firebase-adminsdk-x90j4-162762cb2d.json') 
     firebase_admin.initialize_app(cred, {'databaseURL' : 'https://noteworthy-bddb5.firebaseio.com'})
 
 db = firestore.client()
@@ -23,8 +23,8 @@ doc_ref.set({
 	u'username': u'user1',
 	u'password': u'pass1',
 	u'files': [
-	u'originalText': u'textHere'
-	{u'definitions': {u'keyword': u'def'},
+	{u'originalText': u'textHere',
+	u'definitions': {u'keyword': u'def'},
 	u'urls': {u'keyword': u'url'},
 	u'finalText': u'finalTextHere',
 	u'summary': u'summaryHere'
@@ -65,6 +65,7 @@ def addUser(username, password):
 def addFile(username, text, summary, defDict, urlDict):
 	doc_ref = db.collection(u'users').document(u''+ username)
 	doc_ref.set({
+		'originalText': '???',
 		'finalText' : text,
 		'summary' : summary,
 		'definitions' : defDict,
