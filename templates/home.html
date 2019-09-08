@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>NoteWorthy HomePage</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" 
+			integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="static/main.css">
+	</head>
+
+	<body>
+		
+		<!--Navigation bar-->
+		<nav class="navbar navbar-expand-md">
+		  <a class="navbar-brand" href="#">NoteWorthy</a>
+		  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+			<span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="main-navigation">
+			<ul class="navbar-nav">
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Home</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">About</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="#">Contact</a>
+			  </li>
+			</ul>
+		</div>
+		</nav>
+
+		<!--Header
+		<header class="page-header header container-fluid">
+			<div class="overlay"></div>
+				<div class="description">
+				<br><br><br>
+					<h1>Welcome to Noteworthy!</h1>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum quam odio, quis placerat ante luctus eu. Sed aliquet dolor id sapien rutrum, id vulputate quam iaculis. Suspendisse consectetur mi id libero fringilla, in pharetra sem ullamcorper.</p>
+					<form action="/home" method="post" target="_self"><br>
+					<center><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"><input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg"></center>
+					<br>
+					<button type="submit">Submit<button>
+					</form>
+					
+				</div>
+		</header>-->
+		
+		<div class = "container mt-5">
+			<div class="jumbotron">
+				<h1 class="display-4">Welcome to NoteWorthy!</h1>
+				<p class="lead">A compact and powerful text analysis tool for students</p>
+				<hr class="my-4">
+				<form action="/home" method="post" target="_self" enctype = "multipart/form-data"><br>
+					<input type="file" id="userInput" name="inputFile" accept="image/png, image/jpeg">
+					<br>
+					<br>
+					<button type="submit" class="btn btn-outline-primary">Submit</button>
+				</form>
+			
+
+			</div>
+		</div>
+		
+		<div class="container features">
+		  <div class="row">
+			<div class="col-lg-4 col-md-4 col-sm-12">
+			  <h3 class="feature-title">Academic News</h3>
+			
+			  <img src="static/sci.png" style = "height:200px;width:280px" class="img-fluid">
+			  <p>Hydrogen, Helium, Lithium, and {{link | safe}}</a></p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-12">
+			  <h3 class="feature-title">Student discussion</h3>
+			  <img src="static/bio.png" style = "height:200px;width:280px" class="img-fluid">
+			  <p>If the process of mitosis, leaves you in a <a href="https://stackexchange.com/">daze...</a></p>
+			</div>
+			<div class="col-lg-4 col-md-4 col-sm-12">
+				<h3 class="feature-title" >See Previous Notes</h3>
+				<img src="static/math.png" class="img-fluid" style = "height:200px;width:280px">
+				<p>See notes from <a href="result">before!</a></p>
+			</div>
+		  </div> 
+		</div>
+		
+		
+		
+		<!--Scripts-->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+			crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" 
+			crossorigin="anonymous"></script>
+		<script src="static/main.js"></script>
+	</body>
+</html>
